@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/circle.css">
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div class="divGpu">
+            <div class="divHeader">
+                <span class="title">GPU</span>
+            </div>
+            <div class="divContent">
+                <div class="line">
+                    <div id="0" class="c100 dark p50 small">
+                        <span class="name">TEMP</span>
+                        <span class="data"></span>
+                        <span class="unity">C</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+
+                    <div id="48" class="c100 dark p50 small">
+                        <span class="name">USO</span>
+                        <span class="data"></span>
+                        <span class="unity">%</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+
+                    <div id="32" class="c100 dark p50 small">
+                        <span class="name">CCLOK</span>
+                        <span class="data"></span>
+                        <span class="unity">MHZ</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="line">
+                    <div id="49" class="c100 dark p50 small">
+                        <span class="name">MEM</span>
+                        <span class="data"></span>
+                        <span class="unity">MB</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+    
+                    <div id="50" class="c100 dark p50 small">
+                        <span class="name">FB</span>
+                        <span class="data"></span>
+                        <span class="unity">%</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+    
+                    <div id="51" class="c100 dark p50 small">
+                        <span class="name">VID</span>
+                        <span class="data"></span>
+                        <span class="unity">%</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="line">
+                    <div id="52" class="c100 dark p50 small">
+                        <span class="name">BUS</span>
+                        <span class="data"></span>
+                        <span class="unity">%</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+    
+                    <div id="34" class="c100 dark p50 small">
+                        <span class="name">MCLOK</span>
+                        <span class="data"></span>
+                        <span class="unity">MHZ</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+    
+                    <div id="96" class="c100 dark p50 small">
+                        <span class="name">PWER</span>
+                        <span class="data"></span>
+                        <span class="unity">%</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="line">
+                    <div id="16" class="c100 dark p50 small">
+                        <span class="name">FAN</span>
+                        <span class="data"></span>
+                        <span class="unity">%</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+    
+                    <div id="17" class="c100 dark p50 small">
+                        <span class="name">FAN</span>
+                        <span class="data"></span>
+                        <span class="unity">RPM</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+        <script>
+            
+            
+            document.addEventListener("deviceready", consumeApi, false);
+
+            function consumeApi()
+            {   
+                
+                /*setInterval(function(){
+                    
+                    $.ajax({
+                        "crossDomain": true,
+                        "url": "http://192.168.0.70:82/mahm",
+                        "method": "POST",
+                        "headers": {
+                            "Authorization": "Basic " + btoa("MSIAfterburner:17cc95b4017d496f82"),
+                            "Access-Control-Allow-Origin": "*"}
+                    }).done(function(event) {
+                        //$("body").children().remove();
+                
+                        var xmlTags = $.parseXML(event);
+                        var nos = xmlTags.getElementsByTagName("HardwareMonitorEntry");
+                        for(var i=0; i<nos.length; i++)
+                        {
+                            var childNodes = nos[i].childNodes;
+                            console.log(childNodes[2].innerHTML);
+                            console.log(childNodes[5].innerHTML);
+                            var elemento = $("#"+childNodes[10].innerHTML);
+                            elemento.find("span").text(parseFloat(childNodes[5].innerHTML).toFixed(1) + " " + childNodes[1].innerHTML);
+                            //$("body").append(   "<div style='width: 100%; display: flex; justify-content: space-evenly;'>" +
+                                                    //"<span>" + childNodes[2].innerHTML + "</span>" +
+                                                   // "<span>" + parseFloat(childNodes[5].innerHTML).toFixed(1) + " " + childNodes[1].innerHTML + "</span>" +
+                                                //"</div>");
+                        }
+                    })
+                        .fail(function(error) {
+                        console.log(error);
+                    });
+                }, 1000);*/
+            }
+        </script>
+    </body>
+</html>

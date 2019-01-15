@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/circle.css">
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div class="divComponent">
+            <div class="divHeader">
+                <span class="title">GPU</span>
+            </div>
+            <div class="divContent">
+                <div class="line">
+                    <div id="0" class="c100 dark small" value="50">
+                        <span class="name">TEMP</span>
+                        <span class="data"></span>
+                        <span class="unity">C</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+
+                    <div id="48" class="c100 dark small" value="50">
+                        <span class="name">USO</span>
+                        <span class="data"></span>
+                        <span class="unity">%</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+
+                    <div id="32" class="c100 dark small" value="50">
+                        <span class="name">CCLOK</span>
+                        <span class="data"></span>
+                        <span class="unity">MHZ</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divComponent">
+            <div class="divHeader">
+                <span class="title">CPU</span>
+            </div>
+            <div class="divContent">
+                <div class="line">
+                    <div id="128" class="c100 dark small" value="50">
+                        <span class="name">TEMP</span>
+                        <span class="data"></span>
+                        <span class="unity">C</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+
+                    <div id="144" class="c100 dark small" value="50">
+                        <span class="name">USO</span>
+                        <span class="data"></span>
+                        <span class="unity">%</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+
+                    <div id="160" class="c100 dark small" value="50">
+                        <span class="name">CCLOK</span>
+                        <span class="data"></span>
+                        <span class="unity">MHZ</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divComponent">
+            <div class="divHeader">
+                <span class="title">MEMÓRIA</span>
+            </div>
+            <div class="divContent">
+                <div class="line">
+                    <div id="145" class="c100 dark small" value="50">
+                        <span class="name">RAM</span>
+                        <span class="data"></span>
+                        <span class="unity">MB</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+
+                    <div id="49" class="c100 dark small" value="50">
+                        <span class="name">GPU</span>
+                        <span class="data"></span>
+                        <span class="unity">MB</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divComponent">
+            <div class="divHeader">
+                <span class="title">FPS</span>
+            </div>
+            <div class="divContent">
+                <div class="line">
+                    <div id="80" class="c100 dark" value="50">
+                        <span class="name">FPS</span>
+                        <span class="data"></span>
+                        <span class="unity">fps</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divInformation">
+            <span class="title">Put the server IP Address</span>
+            <input id="inputIpServer" type="text" value="192.168.0.70:82">
+            <button onclick="connectServer();">CONNECT</button>
+        </div>
+
+        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
